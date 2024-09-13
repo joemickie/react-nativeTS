@@ -313,7 +313,7 @@ Navigate to `http://localhost:3000/graphql` to explore the GraphQL API.
 
 ## Postman Collection
 
-For easy testing, use the following [Postman Collection](./postman_collection.json) to interact with the API. The collection includes all GraphQL queries and mutations for registration and login processes.
+For easy testing, use the following [Postman Collection](https://documenter.getpostman.com/view/30896875/2sAXqnfQUP) to interact with the API. The collection includes all GraphQL queries and mutations for registration and login processes.
 
 ---
 
