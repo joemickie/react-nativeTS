@@ -66,18 +66,25 @@ npm install
 # or
 yarn install
 ```
+### 3. Set up Prisma:
 
-### 3. Database Setup (PostgreSQL using Docker)
+Initialize Prisma and create the database schema. This creates a .env file with a DATABASE_URL key. Replace the value with your PostgreSQL URL.
+
+```bash
+npx prisma init
+```
+
+### 4. Database Setup (PostgreSQL using Docker)
 
 If you have **Docker** installed, you can easily set up the PostgreSQL instance:
 
 ```bash
-docker-compose up -d
+docker run --name nest-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
 ```
 
 Alternatively, if you're not using Docker, ensure you have PostgreSQL installed and configured.
 
-### 4. Prisma ORM Setup
+### 5. Prisma ORM Setup
 
 Run the following Prisma commands to generate the client and migrate the database schema:
 
@@ -86,9 +93,9 @@ npx prisma generate
 npx prisma migrate dev --name init
 ```
 
-### 5. Configure Environment Variables
+### 6. Configure Environment Variables
 
-Copy the `.env.example` file and create a new `.env` file.
+Copy the `.env.example` file and edit the .env or create a new `.env` file.
 
 ```bash
 cp .env.example .env
@@ -101,7 +108,7 @@ DATABASE_URL="postgresql://user:password@localhost:5432/yourdb?schema=public"
 JWT_SECRET="your_jwt_secret"
 ```
 
-### 6. Running the Application
+### 7. Running the Application
 
 Once all the configurations are set up, start the application:
 
@@ -287,25 +294,31 @@ JWT_SECRET="your_jwt_secret"
 npm install
 ```
 
-### 2. Start PostgreSQL (via Docker)
+### 2. Set up Prisma:
 
 ```bash
-docker-compose up -d
+npx prisma init
 ```
 
-### 3. Run Prisma Migrations
+### 3. Start PostgreSQL (via Docker)
+
+```bash
+docker run --name nest-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+```
+
+### 4. Run Prisma Migrations
 
 ```bash
 npx prisma migrate dev --name init
 ```
 
-### 4. Start the Application
+### 5. Start the Application
 
 ```bash
 npm run start:dev
 ```
 
-### 5. Access GraphQL Playground
+### 6. Access GraphQL Playground
 
 Navigate to `http://localhost:3000/graphql` to explore the GraphQL API.
 
