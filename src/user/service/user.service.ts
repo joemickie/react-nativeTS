@@ -1,7 +1,7 @@
 import { Injectable, ConflictException, NotFoundException } from '@nestjs/common'; // Import NotFoundException for cases when biometric key is not found
-import { PrismaService } from '../prisma/prisma.service';
+import { PrismaService } from '../../prisma/service/prisma.service';
 import * as bcrypt from 'bcryptjs';  // Import bcrypt for hashing and comparing keys
-import { User } from './user.model';  // Import the User model for type reference
+import { User } from '../model/user.model';  // Import the User model for type reference
 
 @Injectable()
 export class UserService {

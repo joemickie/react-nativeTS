@@ -1,8 +1,8 @@
 import { Resolver, Mutation, Args, Query } from '@nestjs/graphql';
-import { AuthService } from 'src/auth/auth.service'; // Import AuthService for authentication logic
-import { UserService } from './user.service'; // Import UserService for user-related logic
-import { User } from './user.model'; // Import User model for type reference
-import { AuthResponse } from '../auth/auth.model'; // Import AuthResponse for login response
+import { AuthService } from '../../auth/service/auth.service'; // Import AuthService for authentication logic
+import { UserService } from '../service/user.service'; // Import UserService for user-related logic
+import { User } from '../model/user.model'; // Import User model for type reference
+import { AuthResponse } from '../../auth/model/auth.model'; // Import AuthResponse for login response
 import { ConflictException, BadRequestException } from '@nestjs/common'; // Import ConflictException for user already exists error
 
 @Resolver(() => User)

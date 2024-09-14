@@ -251,26 +251,31 @@ npm run test:cov
 ```bash
 src/
 │
-├── auth/                   # Authentication-related logic
-│   ├── auth.model.ts        # AuthResponse model
-│   ├── auth.module.ts       # AuthModule for DI
-│   ├── auth.service.ts      # AuthService for login and JWT logic
+├── auth/
+│   ├── model
+│       ├── auth.model.ts
+│   ├── service
+│       ├── auth.service.ts
+│   ├── strategy
+│       ├── jwt.strategy.ts
+│   ├── auth.module.ts
 │
-├── common/filters/          # Exception filters
-│   ├── graphql-exception.filter.ts  # GraphQL error handling
+├── prisma/
+│   ├── service
+│       ├── prisma.service.ts 
+│   ├── prisma.module.ts
 │
-├── prisma/                  # Prisma setup and configuration
-│   ├── prisma.module.ts      # PrismaModule
-│   ├── prisma.service.ts     # PrismaService for database operations
+├── user/
+|   ├──model
+│      ├── user.model.ts
+|   ├── resolver
+│       ├── user.resolver.ts
+|   ├── sevice
+│       ├── user.service.ts
+│   ├── user.module.ts
 │
-├── user/                    # User-related logic
-│   ├── user.model.ts         # Prisma User model
-│   ├── user.module.ts        # UserModule
-│   ├── user.resolver.ts      # GraphQL Resolver for user operations
-│   ├── user.service.ts       # UserService for business logic
-│
-├── app.module.ts            # Root module for the app
-├── main.ts                  # Application entry point
+├── app.module.ts
+├── main.ts
 ```
 
 ---
